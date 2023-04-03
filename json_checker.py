@@ -6,13 +6,15 @@ JSON_KEY = "TimecodeBurnin"
 SOURCE = sys.argv[1]
 
 util = JsonUtil()
-success = True
+files_to_fix = []
 for file_name in glob(SOURCE):
     with open(file_name, mode='r', encoding='utf-8') as profile:
         profile_json = json.load(profile)
         if util.contains_key(profile_json, JSON_KEY):
-            success = False
-            print(JSON_KEY, "Found In" ,file_name)
+            files_to_fix.append(file_name)
+            print(JSON_KEY, "Found In", file_name)
 
-if not success:
+if files_to_fix:
+    print("The following files failed: ")
+    print(*files_to_fix, sep = "\n")
     sys.exit("Timecode Check Failed")
