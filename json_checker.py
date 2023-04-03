@@ -4,8 +4,8 @@ import sys
 from json_util import JsonUtil
 
 
-JSON_KEY = sys.argv[1]
-SOURCE = sys.argv[2]
+JSON_KEY = "TimecodeBurnin"
+SOURCE = sys.argv[1]
 EXPECTED_QUEUE = ""
 
 ERRORS = {
@@ -16,7 +16,6 @@ ERRORS = {
         "message": "The following files have a queue mismatch", 
         }
 }
-
 for key in ERRORS.keys():
     ERRORS[key]["values"] = []
 
@@ -24,10 +23,8 @@ json_util = JsonUtil()
 for file_name in glob(SOURCE):
     with open(file_name, mode='r', encoding='utf-8') as profile:
         profile_json = json.load(profile)
-
         if json_util.contains_key(profile_json, JSON_KEY):
             ERRORS["JSON_ERROR"]["values"].append(file_name)
-            
         if json_util.get_first_value(profile_json, "Queue") is EXPECTED_QUEUE:
             ERRORS["QUEUE_ERROR"]["values"].append(file_name)
 
