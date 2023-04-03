@@ -5,7 +5,7 @@ import sys
 from json_util import JsonUtil
 
 JSON_KEY = "TimecodeBurnin"
-SOURCE = '/Users/rwo26/work/adtech-dai-media/src/config/transcode_profiles/preprod/*.json'
+SOURCE = './preprod_profile.json'
 
 st = time.time()
 output = []
@@ -18,6 +18,7 @@ for file_name in glob(SOURCE):
         print(util.get_first_value(profile_json, "Queue"))
 
 et = time.time()
-sys.exit("failed")
+if(len(output) > 0):
+    sys.exit("failed")
 elapsed_time = et - st
 print('Execution time:', elapsed_time * 1000, 'ms')
