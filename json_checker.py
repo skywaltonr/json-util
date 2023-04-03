@@ -3,9 +3,10 @@ from glob import glob
 import time
 import sys
 from json_util import JsonUtil
-
+import os
+print ()
 JSON_KEY = "TimecodeBurnin"
-SOURCE = './preprod_profile.json'
+SOURCE = sys.argv[1]
 
 st = time.time()
 output = []
