@@ -19,4 +19,4 @@ jobs:
         - name: repo
       run:
         path: python
-        args: ["repo/json_checker.py", ]
+        args: ["repo/json_checker.py", "repo/profiles/*.json"]
