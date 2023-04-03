@@ -13,7 +13,6 @@ for file_name in glob(SOURCE):
         if util.contains_key(profile_json, JSON_KEY):
             success = False
             print(file_name)
-        print(util.get_first_value(profile_json, "Queue"))
 
-if success is False:
+if not success:
     sys.exit("Timecode Check Failed")
