@@ -5,7 +5,7 @@ import sys
 from json_util import JsonUtil
 
 JSON_KEY = "TimecodeBurnin"
-SOURCE = './preprod_profile.json'
+SOURCE = 'preprod_profile.json'
 
 st = time.time()
 output = []
@@ -21,5 +21,6 @@ et = time.time()
 if(len(output) > 0):
     print(output)
     sys.exit("failed")
+
 elapsed_time = et - st
 print('Execution time:', elapsed_time * 1000, 'ms')
