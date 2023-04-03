@@ -18,6 +18,6 @@ for file_name in glob(SOURCE):
         print(util.get_first_value(profile_json, "Queue"))
 
 et = time.time()
-sys.exit("failed")
+sys.exit(output)
 elapsed_time = et - st
 print('Execution time:', elapsed_time * 1000, 'ms')
