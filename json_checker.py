@@ -19,6 +19,7 @@ for file_name in glob(SOURCE):
 
 et = time.time()
 if(len(output) > 0):
+    print(output)
     sys.exit("failed")
 elapsed_time = et - st
 print('Execution time:', elapsed_time * 1000, 'ms')
