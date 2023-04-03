@@ -5,7 +5,7 @@ import sys
 from json_util import JsonUtil
 
 JSON_KEY = "TimecodeBurnin"
-SOURCE = './prod_profile.json'
+SOURCE = './preprod_profile.json'
 
 st = time.time()
 output = []
