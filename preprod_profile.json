@@ -1,0 +1,579 @@
+{
+	"Description": "Single video ladder, audio aligned to video, raw aac, dolby audio, squart pix, hdr buffer",
+	"Category": "HLS-DE-REVIEW",
+	"Queue": "arn:aws:mediaconvert:eu-west-1:872863703384:queues/Default",
+	"Name": "20221130-preprod-de-vod-hls-25-15b",
+	"Settings": {
+		"TimecodeConfig": {
+			"Source": "ZEROBASED"
+		},
+		"OutputGroups": [
+			{
+				"CustomName": "HLS VOD 1.5b DE",
+				"Name": "Apple HLS",
+				"Outputs": [
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 128,
+							"Height": 72,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_128x72_30k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 1,
+									"HrdBufferSize": 150000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 30000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "MAIN",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 256,
+							"Height": 144,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_256x144_90k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 1,
+									"HrdBufferSize": 450000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 90000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "MAIN",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64,audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 512,
+							"Height": 288,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_512x288_350k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 1,
+									"HrdBufferSize": 1750000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 350000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "MAIN",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64,audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 768,
+							"Height": 432,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_768x432_860k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 1,
+									"HrdBufferSize": 4300000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 860000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "MAIN",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64,audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 1024,
+							"Height": 576,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_1024x576_1850k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 1,
+									"HrdBufferSize": 9250000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 1850000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "MAIN",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64,audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 1280,
+							"Height": 720,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_1280x720_3000k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 2,
+									"HrdBufferSize": 15000000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 3000000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "HIGH",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64,audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 1280,
+							"Height": 720,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_1280x720_4830k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 2,
+									"HrdBufferSize": 24150000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 4830000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "HIGH",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_3_2",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aach-64,audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {}
+						},
+						"VideoDescription": {
+							"Width": 1920,
+							"Height": 1080,
+							"VideoPreprocessors": {
+								"Deinterlacer": {
+									"Algorithm": "INTERPOLATE",
+									"Mode": "DEINTERLACE"
+								},
+								"TimecodeBurnin": {
+									"FontSize": 16,
+									"Prefix": "20221130_HLS_VOD_1920x18080_7830k_"
+								}
+							},
+							"CodecSettings": {
+								"Codec": "H_264",
+								"H264Settings": {
+									"InterlaceMode": "PROGRESSIVE",
+									"ParNumerator": 1,
+									"NumberReferenceFrames": 2,
+									"FramerateDenominator": 1,
+									"GopClosedCadence": 1,
+									"GopSize": 2,
+									"Slices": 2,
+									"HrdBufferSize": 39150000,
+									"ParDenominator": 1,
+									"EntropyEncoding": "CABAC",
+									"Bitrate": 7830000,
+									"FramerateControl": "SPECIFIED",
+									"RateControlMode": "CBR",
+									"CodecProfile": "HIGH",
+									"FramerateNumerator": 25,
+									"CodecLevel": "LEVEL_4_1",
+									"SceneChangeDetect": "ENABLED",
+									"QualityTuningLevel": "SINGLE_PASS_HQ",
+									"GopSizeUnits": "SECONDS",
+									"ParControl": "SPECIFIED",
+									"NumberBFramesBetweenReferenceFrames": 2
+								}
+							}
+						},
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioRenditionSets": "audio-aacl-128,audio-ec-3-192"
+							}
+						},
+						"NameModifier": "_$w$x$h$_$f$fps_$rv$k"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {
+								"AudioDuration": "MATCH_VIDEO_DURATION"
+							}
+						},
+						"AudioDescriptions": [
+							{
+								"AudioSourceName": "Audio Selector 1",
+								"AudioNormalizationSettings": {},
+								"CodecSettings": {
+									"Codec": "AAC",
+									"AacSettings": {
+										"Bitrate": 64000,
+										"RateControlMode": "CBR",
+										"CodecProfile": "HEV1",
+										"CodingMode": "CODING_MODE_2_0",
+										"SampleRate": 48000
+									}
+								},
+								"StreamName": "English",
+								"LanguageCodeControl": "USE_CONFIGURED",
+								"LanguageCode": "ENG"
+							}
+						],
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioGroupId": "audio-aach-64",
+								"AudioTrackType": "ALTERNATE_AUDIO_AUTO_SELECT",
+								"AudioOnlyContainer": "AUTOMATIC"
+							}
+						},
+						"NameModifier": "_$ra$_audio"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {
+								"AudioDuration": "MATCH_VIDEO_DURATION"
+							}
+						},
+						"AudioDescriptions": [
+							{
+								"AudioSourceName": "Audio Selector 1",
+								"AudioNormalizationSettings": {},
+								"CodecSettings": {
+									"Codec": "AAC",
+									"AacSettings": {
+										"Bitrate": 128000,
+										"RateControlMode": "CBR",
+										"CodecProfile": "LC",
+										"CodingMode": "CODING_MODE_2_0",
+										"SampleRate": 48000
+									}
+								},
+								"StreamName": "English",
+								"LanguageCodeControl": "USE_CONFIGURED",
+								"LanguageCode": "ENG"
+							}
+						],
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioGroupId": "audio-aacl-128",
+								"AudioTrackType": "ALTERNATE_AUDIO_AUTO_SELECT",
+								"AudioOnlyContainer": "AUTOMATIC"
+							}
+						},
+						"NameModifier": "_$ra$_audio"
+					},
+					{
+						"ContainerSettings": {
+							"Container": "M3U8",
+							"M3u8Settings": {
+								"AudioDuration": "MATCH_VIDEO_DURATION"
+							}
+						},
+						"AudioDescriptions": [
+							{
+								"AudioTypeControl": "USE_CONFIGURED",
+								"AudioSourceName": "Audio Selector 1",
+								"AudioNormalizationSettings": {},
+								"CodecSettings": {
+									"Codec": "EAC3",
+									"Eac3Settings": {
+										"MetadataControl": "USE_CONFIGURED",
+										"SurroundExMode": "DISABLED",
+										"LoRoSurroundMixLevel": -3,
+										"LtRtSurroundMixLevel": -6,
+										"Bitrate": 192000,
+										"LtRtCenterMixLevel": -3,
+										"PassthroughControl": "NO_PASSTHROUGH",
+										"LfeControl": "LFE",
+										"LoRoCenterMixLevel": -3,
+										"CodingMode": "CODING_MODE_3_2",
+										"BitstreamMode": "COMPLETE_MAIN",
+										"LfeFilter": "ENABLED",
+										"DynamicRangeCompressionLine": "FILM_STANDARD",
+										"DcFilter": "ENABLED"
+									}
+								},
+								"StreamName": "English",
+								"LanguageCodeControl": "USE_CONFIGURED",
+								"AudioType": 0
+							}
+						],
+						"OutputSettings": {
+							"HlsSettings": {
+								"AudioGroupId": "audio-ec-3-192",
+								"AudioTrackType": "ALTERNATE_AUDIO_AUTO_SELECT",
+								"AudioOnlyContainer": "AUTOMATIC"
+							}
+						},
+						"NameModifier": "_$ra$_audio"
+					}
+				],
+				"OutputGroupSettings": {
+					"Type": "HLS_GROUP_SETTINGS",
+					"HlsGroupSettings": {
+						"ManifestDurationFormat": "FLOATING_POINT",
+						"SegmentLength": 10,
+						"SegmentLengthControl": "GOP_MULTIPLE",
+						"Destination": "s3://sky1.5b-output/",
+						"MinSegmentLength": 0,
+						"MinFinalSegmentLength": 1,
+						"SegmentControl": "SEGMENTED_FILES"
+					}
+				}
+			}
+		],
+		"Inputs": [
+			{
+				"AudioSelectors": {
+					"Audio Selector 1": {
+						"DefaultSelection": "DEFAULT"
+					}
+				},
+				"VideoSelector": {},
+				"TimecodeSource": "ZEROBASED"
+			}
+		]
+	},
+	"AccelerationSettings": {
+		"Mode": "DISABLED"
+	},
+	"StatusUpdateInterval": "SECONDS_60",
+	"Priority": 0,
+	"HopDestinations": []
+}
