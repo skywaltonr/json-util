@@ -1,14 +1,22 @@
----
+resources:
+- name: repo
+  type: git
+  source:
+    uri: https://github.com/skywaltonr/json-util.git
+
 jobs:
 - name: job
   public: true
   plan:
+  - get: repo
   - task: simple-task
     config:
       platform: linux
       image_resource:
         type: registry-image
         source: { repository: public.ecr.aws/b4v4v1s0/python }
+      inputs: # add the get step as an input to this task
+        - name: repo
       run:
         path: python
-        args: ["json_checker.py"]
+        args: ["repo/json_checker.py"]
