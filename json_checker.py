@@ -1,6 +1,7 @@
 import json
 from glob import glob
 import time
+import sys
 from json_util import JsonUtil
 
 JSON_KEY = "TimecodeBurnin"
@@ -18,6 +19,6 @@ for file_name in glob(SOURCE):
 
 et = time.time()
 if (len(output) > 0):
-    raise Exception()
+    sys.exit("failed")
 elapsed_time = et - st
 print('Execution time:', elapsed_time * 1000, 'ms')
